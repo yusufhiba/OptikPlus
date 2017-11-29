@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>XX</title>
+        <title>Halaman Input Kasir Optik Plus</title>
         <link href="indah.css" rel="stylesheet" type="text/css" />
     </head>
     
     <body>
         <h1>Optik Plus</h1>
-        <p>Halaman Input Kasir.</p>
+        <p>CITO FS 38 No. 01 & 02 Surabaya Telp 082335099959</p>
+        <p>Jl. Akim Kayat No. 2 Gresik Telp 081213719717</p>
         <fieldset> 
-            <legend>Info</legend>
+            <legend><b>Info Pelanggan</b></legend>
                 <form>
                 <ul class="form-style-1">
                     <li><label>Nama <span class="required">*</span></label><input type="text" name="nama" class="field-divided" placeholder="Nama" />
@@ -27,97 +28,107 @@
                     <li>
                         <label>Nomor Telepon <span class="required">*</span></label><input type="text" name="telepon" class="field-divided" placeholder="Nomor Telepon" />
                     </li>
+                </ul>
         </fieldset>
 
         <fieldset> 
-            <legend>Kacamata</legend>
-                <form action="Merk"> 
-                    <li>Jenis Kacamata 
-                    <select name="devices">    
+            <legend><b>Input Kacamata</b></legend>
+                <form>
+                <ul class="form-style-1">
+                    <li>
+                        <label>Jenis Frame<span class="required">*</span></label>
+                        <select name="jenis">    
                         <option value="nike">Nike</option>    
                         <option value="adidas">Adidas</option>    
                         <option value="leecoper">LeeCooper</option>  
                     </select>
-                    </li> 
+                    </li>
 
-                    <li>Qty 
-                    <select name="jumlah">    
+                    <li>
+                        <label>Quantity <span class="required">*</span></label>
+                        <select name="jumlah">    
                         <option value="Satu">1</option>    
                         <option value="Dua">2</option>    
                         <option value="Tiga">3</option>  
                     </select>
-                    </li> 
-
-                    <li><label>Harga <span class="required">*</span></label><input type="text" name="nama" class="field-divided" placeholder="Harga" />
+                    </li>   
+                
+                    <li>
+                        <label>Harga <span class="required">*</span></label><input type="text" name="harga" class="field-divided" placeholder="Harga" />
                     </li>
-                </form>
-                    
-                <form action="Lensa"> 
-                    <li>Tipe Lensa 
-                    <select name="devices">    
+                
+                    <li>
+                        <label>Tipe Lensa <span class="required">*</span></label>
+                        <select name="devices">    
                         <option value="antiembun">Anti Embun</option>    
                         <option value="antiradiasi">Anti Radiasi</option>  
-                    </li>
-                    </select> 
+                        </select> 
+                    </li>  
 
-                    <li>Jenis Lensa
-                    <select name="plusminus">    
+                    <li>
+                        <label>Jenis Lensa <span class="required">*</span></label>
+                        <select name="plusminus">    
                         <option value="plus">Plus</option>    
                         <option value="minus">Minus</option>  
                         <option value="silinder">Silinder</option>
-                    </li>
-                    </select> 
-
-                    <li><label>Kanan <span class="required">*</span></label><input type="text" name="kanan" class="field-divided" placeholder="kanan" />
+                        </select> 
                     </li>
 
-                    <li><label>Kiri <span class="required">*</span></label><input type="text" name="kiri" class="field-divided" placeholder="kiri" />
-                    </li>
+                    <li>
+                        <table cellpadding="0" cellspacing="0">
+                            <tr>
+                            <td><p><b>SP</b><span class="required">*</span></p></td>
+                            <td><p><b>CYL</b><span class="required">*</span></p></td>
+                            <td><p><b>AXIS</b><span class="required">*</span></p></td>
+                            </tr>
+                
+                            <tr>
+                            <td><input type="text" name="spkanan" class="field-divided" placeholder="Kanan" /></td>
+                            <td><input type="text" name="cylkanan" class="field-divided" placeholder="Kanan" /></td>
+                            <td><input type="text" name="axiskanan" class="field-divided" placeholder="Kanan" /></td>
+                            </tr>
 
-                    <li><label>Axis <span class="required">*</span></label><input type="text" name="axis" class="field-divided" placeholder="axis" />
+                            <tr>
+                            <td><input type="text" name="spkiri" class="field-divided" placeholder="Kiri" /></td>
+                            <td><input type="text" name="cylkiri" class="field-divided" placeholder="Kiri" /></td>
+                            <td><input type="text" name="axiskiri" class="field-divided" placeholder="Kiri" /></td>
+                            </tr>
+                        </table>
                     </li>
-                </form>
+                </ul>  
         </fieldset>
 
-             
+        <fieldset> 
+            <legend><b>Jenis Pembayaran</b></legend>
+                <form>
+                <ul class="form-style-1">
                     <li>
-                        <input type="submit" value="Simpan" />
+                        <label>DP <span class="required">*</span></label><input type="text" name="Rp" class="field-divided" placeholder="Rp" />
                     </li>
 
-                
-             <!--   
-                <form>
-<ul class="form-style-1">
-    <li><label>Full Name <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="First" />&nbsp;<input type="text" name="field2" class="field-divided" placeholder="Last" /></li>
-    <li>
-        <label>Email <span class="required">*</span></label>
-        <input type="email" name="field3" class="field-long" />
-    </li>
-    <li>
-        <label>Subject</label>
-        <select name="field4" class="field-select">
-        <option value="Advertise">Advertise</option>
-        <option value="Partnership">Partnership</option>
-        <option value="General Question">General</option>
-        </select>
-    </li>
-    <li>
-        <label>Your Message <span class="required">*</span></label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
-    </li>
-    <li>
-        <input type="submit" value="Submit" />
-    </li>
-</ul>
-</form>
-                -->
-                
-                
-                
-            </ul>
-            
-        </form>
-        
-    </body>
+                    <li>    
+                        <label>Sisa <span class="required">*</span></label><input type="text" name="Rp" class="field-divided" placeholder="Rp" />
+                    </li>
 
+                    <li>    
+                        <label>Total <span class="required">*</span></label><input type="text" name="Rp" class="field-divided" placeholder="Rp" />
+                    </li>
+
+                    <p>
+                        <input type="submit" name="lunas"   value="Lunas" /> 
+                        <input type="submit" name="belumlunas"   value="Belum Lunas" />
+                    </p> 
+                </ul> 
+
+        </fieldset>  
+        <p>
+            <label><b>Kasir</b><span class="required">*</span></label>
+            <select name="namakasir">    
+            <option value="kasir1">Andi</option>    
+            <option value="kasir2">Budi</option>  
+            <option value="kasir2">Charlie</option>  
+            </select> 
+        </p>  
+        <p><input type="submit" name="simpan"   value="Simpan" /> </p>    
+    </body>
 </html>
