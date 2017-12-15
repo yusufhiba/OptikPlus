@@ -1,5 +1,17 @@
 <?php
 include ("konek.php");
+session_start();
+
+if (!isset($_SESSION['username'])) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: login.php');
+    }
+
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['username']);
+        header("location: login.php");
+    }
 
 ?>
 
@@ -14,8 +26,11 @@ include ("konek.php");
         <h1>Optik Plus</h1>
         <p>CITO FS 38 No. 01 & 02 Surabaya Telp 082335099959</p>
         <p>Jl. Akim Kayat No. 2 Gresik Telp 081213719717</p>
+        <p><a href ="logout.php"><input type="submit" name="logout" value="Logout" /></a></p> 
         <form action="proses_cashier.php" method="post">
-        <fieldset> 
+        
+		<fieldset> 
+		
             <legend><b>Info Pelanggan</b></legend>
                
                 <ul class="form-style-1">
@@ -143,11 +158,20 @@ include ("konek.php");
         </fieldset>  
         <p>
             <label><b>Kasir</b><span class="required">*</span></label>
-            <select name="namakasir">    
-            <option value="kasir1">Andi</option>    
-            <option value="kasir2">Budi</option>  
-            <option value="kasir2">Charlie</option>  
-            </select> 
+            <?php  
+            $query = "SELECT * FROM users WHERE status = 'cashier'";
+            $list=mysqli_query($link, $query);
+                if(!$list){
+                    die("Query gagal : ".mysqli_errno($link)." - ".mysqli_error($link));
+            }
+
+            $select= '<select name="namakasir">';
+            while($rs=mysqli_fetch_array($list)){
+                $select.='<option value="'.$rs['name'].'">'.$rs['name'].'</option>';
+                }
+            $select.='</select>';
+            echo $select;
+            ?>
         </p>  
         <p><input type="submit" name="simpan" value="Simpan" /></p> 
         </form>
