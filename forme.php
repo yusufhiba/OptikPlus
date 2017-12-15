@@ -77,14 +77,35 @@
   </div>
 </nav>
 
-	<form action = "proses.php" method="post">
+	<form action = "editbarang.php" method="post">
         <table>
 
 		<tr>
 		
 			<th>Nama Barang</th>
 			<td>:</td>
-			<td><input type="text" name="nama_barang" required="required"/></td>
+            <td>
+            <?php  
+
+            $link=mysqli_connect("localhost", "id3391378_optikplus", "optikplus123", "id3391378_login");
+                if(!$link) {
+            die("Koneksi error : ".mysqli_connect_errno()." - ".mysqli_connect_error());
+            }
+
+            $query = "SELECT * FROM tb_stock ";
+            $list=mysqli_query($link, $query);
+                if(!$list){
+                    die("Query gagal : ".mysqli_errno($link)." - ".mysqli_error($link));
+            }
+
+            $select= '<select name="barang">';
+            while($rs=mysqli_fetch_array($list)){
+                $select.='<option value="'.$rs['nama_barang'].'">'.$rs['nama_barang'].'</option>';
+                }
+            $select.='</select>';
+            echo $select;
+            ?>
+        </td>
 		</tr>
 		<tr>
 			<th>Jumlah Barang</th>
